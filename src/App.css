@@ -1,0 +1,61 @@
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: unset;
+}
+
+button,
+span,
+img {
+  display: inline-block;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.logo {
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 40.271px;
+}
+
+.header-navlinks-parent {
+  display: flex;
+  gap: 1em;
+}
+
+.header-navlinks {
+  color: #4D4D4D;
+  text-align: right;
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.923px;
+}
