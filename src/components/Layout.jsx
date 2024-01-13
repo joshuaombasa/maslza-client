@@ -26,7 +26,7 @@ export default function Layout() {
                 <Outlet />
             </div>
             <footer>
-
+                <p className="footer-text">copyright maslza IT</p>
             </footer>
         </div>
     )
