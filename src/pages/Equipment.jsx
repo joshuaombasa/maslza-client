@@ -1,7 +1,14 @@
-import React from "react";
-import { useSearchParams } from 'react-router-dom'
+import React, { Suspense } from "react";
+import { Await, defer, useLoaderData, useSearchParams, Link } from 'react-router-dom'
+import { getEquipment } from "../utils/api";
+
+export async function loader() {
+    return defer({equipment : getEquipment()})
+}
 
 export default function Equipment() {
+
+    const dataPromise = useLoaderData()
 
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -9,6 +16,19 @@ export default function Equipment() {
         const sp = new URLSearchParams()
         sp.set(type, value)
         setSearchParams(sp)
+    }
+
+    function renderEquipment(equipment) {
+        
+        const equipmentEls = equipment.map(item => (
+            <Link to={item._id} key={item._id} className="equipment-item">
+                <img src={item.imageUrl}/>
+                <h3>{item.name}</h3>
+                <h3>{item.price}</h3>
+            </Link>
+        ))
+
+        return equipmentEls
     }
 
     return (
@@ -31,6 +51,11 @@ export default function Equipment() {
                     onClick={() => generateNewUrlSearchParams("type", "excavator")}
                 >Excavator</button>
             </nav>
+            <Suspense  fallback={<h1>Loading...</h1>}>
+                <Await resolve={dataPromise.equipment}>
+                    {renderEquipment}
+                </Await>
+            </Suspense>
         </div>
     )
 }
