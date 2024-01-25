@@ -4,7 +4,7 @@ import './App.css'
 import Layout from './components/Layout'
 import VendorLayout from './components/VendorLayout'
 import About from './pages/About'
-import Equipment from './pages/Equipment'
+import Equipment,{loader as equipmentLoader} from './pages/Equipment'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Dashboard from './pages/vendor/Dashboard'
@@ -18,7 +18,7 @@ function App() {
     <Route path='/' element={<Layout/>}>
       <Route index element={<Home/>}/>
       <Route path='about' element={<About/>}/>
-      <Route path='equipment'  element={<Equipment/>}/>
+      <Route path='equipment'  loader={equipmentLoader}  element={<Equipment/>}/>
       <Route path='vendor'  element={<VendorLayout/>}>
         <Route index element={<Dashboard/>}/>
         <Route path='income' element={<Income/>}/>
