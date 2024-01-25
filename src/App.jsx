@@ -5,6 +5,7 @@ import Layout from './components/Layout'
 import VendorLayout from './components/VendorLayout'
 import About from './pages/About'
 import Equipment,{loader as equipmentLoader} from './pages/Equipment'
+import EquipmentDetails, {loader as equipmentDetailsLoader} from './pages/EquipmentDetails'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Dashboard from './pages/vendor/Dashboard'
@@ -19,6 +20,7 @@ function App() {
       <Route index element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='equipment'  loader={equipmentLoader}  element={<Equipment/>}/>
+      <Route path='equipment/:id' loader={equipmentDetailsLoader} element={<EquipmentDetails/>}/>
       <Route path='vendor'  element={<VendorLayout/>}>
         <Route index element={<Dashboard/>}/>
         <Route path='income' element={<Income/>}/>
