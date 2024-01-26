@@ -28,6 +28,10 @@ img {
   display: inline-block;
 }
 
+p {
+  line-height: 1.5;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -59,3 +63,20 @@ header {
   font-weight: 600;
   line-height: 22.923px;
 }
+
+.outlet--container {
+  min-height: 77.5vh;
+}
+
+.footer-text {
+  color: #AAA;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.923px;
+  background: #252525;
+  padding: 1.5em;
+}
+
