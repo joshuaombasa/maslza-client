@@ -19,6 +19,10 @@ export default function Layout() {
                         to="equipment"
                         className='header-navlinks'
                     >Equipment</NavLink>
+                    <NavLink
+                        to="login"
+                        className='header-navlinks'
+                    >Login</NavLink>
                    
                 </nav>
             </header>
