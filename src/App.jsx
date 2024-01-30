@@ -7,7 +7,7 @@ import About from './pages/About'
 import Equipment,{loader as equipmentLoader} from './pages/Equipment'
 import EquipmentDetails, {loader as equipmentDetailsLoader} from './pages/EquipmentDetails'
 import Home from './pages/Home'
-import Login from './pages/Login'
+import Login, {loader as loginLoader, action as loginAction} from './pages/Login'
 import NotFound from './pages/NotFound'
 import Dashboard from './pages/vendor/Dashboard'
 import Income from './pages/vendor/Income'
@@ -22,7 +22,7 @@ function App() {
       <Route path='about' element={<About/>}/>
       <Route path='equipment'  loader={equipmentLoader}  element={<Equipment/>}/>
       <Route path='equipment/:id' loader={equipmentDetailsLoader} element={<EquipmentDetails/>}/>
-      <Route path='login'  element={<Login/>}/>
+      <Route path='login' loader={loginLoader} action={loginAction} element={<Login/>}/>
       <Route path='vendor'  element={<VendorLayout/>}>
         <Route index element={<Dashboard/>}/>
         <Route path='income' element={<Income/>}/>
