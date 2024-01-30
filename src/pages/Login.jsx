@@ -1,9 +1,35 @@
 import React from "react";
 import { useState } from "react";
+import { Form, useActionData } from 'react-router-dom'
+import { loginUser } from "../utils/api";
+
+export async function loader() {
+    return null
+}
+
+export async function action({ request }) {
+    const formData = await request.formData()
+    const email = formData.get("email")
+    const password = formData.get("password")
+    const userData = { email, password }
+
+    try {
+        const  data = await loginUser(userData)
+        return data
+
+    } catch (error) {
+        return error
+    }
+    
+}
 
 
 
 export default function Login() {
+
+    const actionData = useActionData()
+
+    console.log(actionData)
 
     const [formData, setFormData] = useState({
         email: '',
@@ -21,15 +47,12 @@ export default function Login() {
         ))
     }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        console.log(formData)
-    }
+   
 
     return (
         <div className="login-page">
             <div className="login-page-content">
-                <form onSubmit={handleSubmit}>
+                <Form method="post">
                     <div className="login-form-element">
                         <label htmlFor="">Email:</label>
                         <input
@@ -49,7 +72,7 @@ export default function Login() {
                         />
                     </div>
                     <button className="login-button">Login</button>
-                </form>
+                </Form>
             </div>
         </div>
     )
