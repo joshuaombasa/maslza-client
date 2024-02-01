@@ -14,11 +14,24 @@ export default function EquipmentDetails() {
 
     function renderEquipment(equipment) {
         console.log(equipment)
+        return (
+            <div className="equipment-parent">
+                <img src={equipment.imageUrl} alt="" />
+                <h3>{equipment.name}</h3>
+                <h3>{equipment.type}</h3>
+                <h3>$ {equipment.price} / day</h3>
+                <p>{equipment.description}</p>
+                <Link>Book this equipment</Link>
+            </div>
+        )
     }
 
     return (
         <div className="equipment-details-page">
-            <Link>&larr;</Link>
+            <Link
+                 to={`..`}
+                 relative="path"
+            >&larr;  Back to all equipment</Link>
             <Suspense>
                 <Await resolve={dataPromise.equipment}>
                     {renderEquipment}
