@@ -80,3 +80,153 @@ header {
   padding: 1.5em;
 }
 
+
+.about-page, .home-page {
+  width: 1000px;
+  margin: 2em auto;
+}
+
+.login-page {
+  width: 800px;
+  display: flex;
+  min-height: 77.5vh;
+  margin: 0 auto;
+}
+
+.login-page-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 5px;
+}
+
+.login-page label {
+  color: #4D4D4D;
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.923px;
+}
+
+.login-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.login-form-element>input {
+  padding: 0.5em;
+  font-size: 1.1rem;
+  border: 1px solid #4D4D4D;
+  outline: unset;
+  border-radius: 3px;
+}
+
+.login-form-element>input:focus {
+  outline: unset;
+
+}
+
+.login-button {
+  padding: 0.5em;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.equipment-page {
+  width: 1000px;
+  margin: 2em auto;
+}
+
+.equipment-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.equipment-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.equipment-item img {
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.equipment-item h3 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31.662px;
+  /* 158.308% */
+}
+
+.vendor-layout-nav {
+  margin: 1em 0;
+  display: flex;
+  gap: 2em;
+}
+
+.vendor-layout-nav button {
+  color: #4D4D4D;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23.919px;
+  border-radius: 5px;
+  background: #FFEAD0;
+  border: none;
+  width: 10%;
+  padding: 0.5em 0;
+  /* 149.496% */
+}
+
+.equipment-details-page {
+  width: 1000px;
+  margin: 2em auto;
+}
+
+.equipment-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin:  2em 0;
+}
+
+.equipment-parent > img {
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.equipment-parent h3 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31.662px;
+}
+
+.vendor-layout {
+  width: 1000px;
+  margin: 2em auto;
+}
